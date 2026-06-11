@@ -1,34 +1,67 @@
-# [PRODUCT NAME]
+# Vorker Compliance
 
-> [One-line value proposition — e.g. "An AI agent that automates invoice chasing for freelancers."]
+> **The AI compliance coworker for Swedish small business owners.**
+> Grounded answers on tax, VAT, corporate law, and labor regulations — always sourced from Skatteverket, Bolagsverket, and verksamt.se.
 
-Built with [Google ADK](https://google.github.io/adk-docs/) for the **Vorker Intern Tryouts — Phase 1** (June 11, 2026).
+Built with [Google ADK](https://google.github.io/adk-docs/) for **Vorker Intern Tryouts — Phase 1** (June 11, 2026).
+
+Repository: [github.com/CaffineAddic/Vorker](https://github.com/CaffineAddic/Vorker)
 
 ---
 
 ## The problem
 
-[TARGET USER TYPE] spends significant time on [PAINFUL MANUAL TASK].
-This is repetitive, error-prone, and takes focus away from their core work.
+Swedish SME owners can't trust generic AI for compliance questions. A wrong answer about VAT, karensavdrag, or an aktieägaravtal isn't just unhelpful — it's a legal and financial liability.
 
-## The solution
-
-**[PRODUCT NAME]** is an AI agent that [DOES WHAT] so that [TARGET USER] can [BENEFIT].
-
-It works by:
-1. [Step 1 — what the agent does first]
-2. [Step 2 — what the agent does next]
-3. [Step 3 — the output/result]
+**Vorker Compliance closes the Compliance Gap.** It combines Gemini's reasoning with live searches and fetches from authoritative Swedish sources so every answer is traceable, current, and specific to Swedish law.
 
 ---
 
-## Demo
-
-_Screenshot or short description of the agent in action._
+## Architecture
 
 ```
-User: [example user input]
-Agent: [example agent response showing tool use]
+User query
+    │
+    ▼
+┌─────────────────────────────────────────────┐
+│  vorker_compliance_agent  (gemini-2.0-flash) │
+│                                             │
+│  System prompt: Swedish compliance expert   │
+│  Mandatory process: search → fetch → cite   │
+│                                             │
+│  Tools:                                     │
+│  ├── google_search  (ADK built-in)          │
+│  ├── get_recommended_sources  (curated)     │
+│  └── fetch_page_content  (custom)           │
+└─────────────────────────────────────────────┘
+    │
+    ▼
+Cited, sourced, actionable compliance answer
+```
+
+---
+
+## Demo — VIT test cases
+
+### 1. Aktieägaravtal / hembudsförbehåll
+```
+User: Explain the requirements for an aktieägaravtal regarding hembudsförbehåll in a Swedish AB.
+
+Agent: [get_recommended_sources → fetch bolagsverket.se + riksdagen.se → cited answer]
+```
+
+### 2. Karensavdrag (part-time)
+```
+User: How do I calculate karensavdrag for a part-time employee?
+
+Agent: [get_recommended_sources → fetch skatteverket.se → 20% rule + pro-rating example]
+```
+
+### 3. VAT cross-border SaaS
+```
+User: VAT implications for SaaS to B2B Norway vs B2C Germany?
+
+Agent: [get_recommended_sources → fetch Skatteverket OSS pages → side-by-side comparison]
 ```
 
 ---
@@ -36,21 +69,16 @@ Agent: [example agent response showing tool use]
 ## How to run
 
 ```bash
-# 1. Clone the repo
-git clone https://github.com/[YOUR_USERNAME]/vorker-sprint.git
-cd vorker-sprint
+git clone https://github.com/CaffineAddic/Vorker.git
+cd Vorker/vorker
 
-# 2. Install dependencies
 pip install -r requirements.txt
 
-# 3. Set your API key
 cp .env.example .env
-# Edit .env and add your GOOGLE_API_KEY
+# Add your GOOGLE_API_KEY from https://aistudio.google.com/
 
-# 4. Run the agent (interactive dev UI)
 adk web
-
-# Open http://localhost:8000 in your browser
+# → Open http://localhost:8000
 ```
 
 ---
@@ -58,14 +86,14 @@ adk web
 ## Project structure
 
 ```
-vorker-sprint/
-├── agent/
-│   ├── __init__.py     # package entry point
-│   ├── agent.py        # root agent definition
-│   └── tools.py        # tool functions
-├── landing.html        # product landing page
-├── pitch_notes.md      # pitch deck outline
-├── gtm.md              # go-to-market plan
+vorker/
+├── __init__.py
+├── agent.py             # Root agent + system instruction
+├── tools.py             # fetch_page_content, get_recommended_sources
+├── sources.py           # Curated URLs for VIT test cases
+├── landing.html
+├── pitch_notes.md
+├── gtm.md
 ├── requirements.txt
 ├── .env.example
 └── README.md
@@ -75,8 +103,10 @@ vorker-sprint/
 
 ## Business case
 
-See [`pitch_notes.md`](./pitch_notes.md) for the full pitch and [`gtm.md`](./gtm.md) for the go-to-market plan.
+See [`pitch_notes.md`](./pitch_notes.md) and [`gtm.md`](./gtm.md).
+
+**One-liner:** *Vorker Compliance is the AI coworker that gives Swedish SME owners the confidence of a revisor — at a fraction of the cost.*
 
 ---
 
-_Built solo at Vorker Intern Tryouts · Phase 1 · June 11, 2026_
+_Built at Vorker Intern Tryouts · Phase 1 · June 11, 2026_

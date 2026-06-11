@@ -1,41 +1,38 @@
-# [PRODUCT NAME] — Pitch
+# Vorker Compliance — Pitch
 
 _Vorker Intern Tryouts, Phase 1 · June 11, 2026_
 
 ---
 
-## Slide 1 — The problem
+## Slide 1 — The Compliance Gap
 
-**Who:** [TARGET USER — e.g. "Freelancers and micro-agencies (1–5 people)"]
+**Who:** Swedish SME owners — freelancers, micro-ABs, 1–10 employees.
 
-**Pain:** [SPECIFIC PAIN — e.g. "Spend 3–5 hours per week chasing unpaid invoices via email"]
+**Pain:** General AI gives plausible but wrong answers on VAT, karensavdrag, and corporate law. One mistake can mean penalties, frozen F-skatt, or invalid shareholder agreements.
 
-**Cost:** [QUANTIFIED IMPACT — e.g. "$X in lost time, cash flow stress, awkward client relationships"]
+**Cost:** Hours spent researching + residual uncertainty even after Googling.
 
-**Why now:** AI agents can now handle this end-to-end — something not possible 2 years ago.
+**Why now:** AI agents can search and cite authoritative sources in real time — closing the gap between "I need an answer" and "I can trust this answer."
 
 ---
 
 ## Slide 2 — The solution
 
-**[PRODUCT NAME]** is an AI agent that [DOES WHAT] for [WHO].
+**Vorker Compliance** is an AI compliance coworker built on Google ADK + Gemini 2.0 Flash.
 
-- Runs autonomously — no manual babysitting
-- Integrates with [TOOL THEY ALREADY USE — e.g. Gmail, Slack, QuickBooks]
-- Built on Google ADK — enterprise-grade, production-ready framework
+It does not guess. It searches Skatteverket, Bolagsverket, and verksamt.se, fetches the actual page, cites the source, and tells you when to call a revisor.
 
-**One-liner:** _"[PRODUCT NAME] is your AI coworker for [TASK]."_
+**One-liner:** *"The confidence of a revisor, available 24/7, at 1% of the cost."*
 
 ---
 
-## Slide 3 — How it works (demo flow)
+## Slide 3 — Live demo (VIT test cases)
 
-1. **Trigger:** [What kicks off the agent — e.g. "Invoice goes 7 days past due"]
-2. **Action 1:** [First thing agent does — e.g. "Agent checks invoice status via accounting tool"]
-3. **Action 2:** [Second thing — e.g. "Drafts a personalised follow-up email"]
-4. **Output:** [What the user gets — e.g. "Email sent, status logged, user notified in Slack"]
+1. **Aktieägaravtal / hembudsförbehåll** — Bolagsverket + ABL sources cited
+2. **Karensavdrag (part-time)** — 20% rule with pro-rating example from Skatteverket
+3. **VAT SaaS: B2B Norway vs B2C Germany** — side-by-side OSS/reverse-charge comparison
 
-_Live demo via `adk web` — see the agent reason through each step in real time._
+_Live demo via `adk web` — agent reasons through search → fetch → cite in real time._
 
 ---
 
@@ -43,30 +40,24 @@ _Live demo via `adk web` — see the agent reason through each step in real time
 
 | | |
 |---|---|
-| **TAM** | [X]M small businesses globally that [have this pain] |
-| **SAM** | [Y]M in [region/vertical] using [relevant tool] |
-| **ICP** | [Describe ideal first customer in 1 sentence] |
-
-**Why this segment:** They have the pain, they're underserved by enterprise tools, and they'll pay for time savings.
+| **TAM** | ~650,000 Swedish small businesses |
+| **SAM** | ~330,000 solo/micro businesses with active compliance needs |
+| **ICP** | Solo founder or 1-person AB, 1–3 years in business, no dedicated revisor |
 
 ---
 
-## Slide 5 — Go-to-market
+## Slide 5 — GTM & monetization
 
-_(Full detail in `gtm.md`)_
+- **Phase 1:** Frilansare Sverige community, LinkedIn content
+- **Phase 2:** Bokio / Fortnox integration partnership
+- **Phase 3:** White-label for revisorsbyråer
 
-- **Phase 1 (0–3 mo):** Direct outreach to [ICP] — validate pain, get 10 paying beta users
-- **Phase 2 (3–6 mo):** Integration partnership with [PLATFORM THEY USE]
-- **Phase 3 (6–12 mo):** Self-serve sign-up + content-led growth
-
-**Pricing:** Free tier (limited) → $[X]/mo Pro → $[Y]/mo Team
+**Pricing:** 0 kr free → 149 kr/mo Solo → 499 kr/mo Företag
 
 ---
 
 ## Slide 6 — Why Vorker
 
-- Vorker's AI coworker platform is the perfect distribution vehicle for [PRODUCT NAME]
-- We bring: the agent concept, the ADK build, and a validated ICP
-- Together: [PRODUCT NAME] becomes a native module in Vorker's coworker stack
+Vorker builds the AI coworker stack for small business. Vorker Compliance is the Swedish regulatory module every Nordic coworker needs.
 
-**The ask:** Join as [ROLE — e.g. "technical co-builder / product intern"] to take this from prototype to product.
+**The ask:** Integrate Vorker Compliance as the compliance layer in Vorker, with expansion to Norway, Finland, and Denmark.

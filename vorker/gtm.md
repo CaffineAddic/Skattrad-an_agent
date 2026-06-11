@@ -1,71 +1,55 @@
-# Go-to-Market Plan — [PRODUCT NAME]
+# Go-to-Market Plan — Vorker Compliance
 
-_Vorker Intern Tryouts, Phase 1 · June 11, 2026_
+## Market
 
----
+Sweden has ~400,000 active aktiebolag and ~250,000 sole traders. Most are micro-businesses that cannot afford a revisor on retainer but face the same compliance complexity as larger firms.
 
-## Target customer
+| Segment | Size | Pain | Willingness to pay |
+|---------|------|------|-------------------|
+| Solo founders / frilansare | ~180,000 | Very high | 150–300 kr/mo |
+| Micro-AB (1–5 employees) | ~150,000 | Very high | 300–800 kr/mo |
+| Small AB (5–20 employees) | ~70,000 | High | 800–2,000 kr/mo |
 
-| | |
-|---|---|
-| **Segment** | [e.g. Freelancers, micro-agencies, independent accountants] |
-| **Size** | 1–10 employees |
-| **Geography** | [e.g. English-speaking markets: US, UK, AU, SE] |
-| **Tools they use** | [e.g. Gmail, Slack, QuickBooks, Notion, Shopify] |
-| **Core pain** | [Specific, quantified pain — e.g. "3–5h/wk on manual X"] |
-| **Willingness to pay** | [e.g. $20–50/mo — already pays for SaaS tools] |
+**Beachhead:** Solo founders and frilansare — fast decisions, high pain, active online.
 
 ---
 
-## Channels
+## ICP
+
+- **Who:** Swedish freelancer or 1-person AB, 1–3 years in business
+- **Stack:** Bokio/Fortnox, no dedicated revisor
+- **Pain:** 2–4 hours/month on compliance research, still uncertain
+- **Trigger:** First VAT declaration, first employee, first EU invoice
+- **Channels:** Frilansare Sverige (Facebook), LinkedIn, Företagarna, verksamt.se ecosystem
+
+---
+
+## Phases
 
 | Phase | Timeframe | Channel | Goal |
 |-------|-----------|---------|------|
-| 0 | Weeks 1–2 | Manual outreach (LinkedIn, Reddit, Slack communities) | 10 beta signups, qualitative feedback |
-| 1 | Months 1–3 | Cold email to ICP list + referrals | 50 active users, 10 paying |
-| 2 | Months 3–6 | Integration partnership with [PLATFORM] | Co-marketing, in-app distribution |
-| 3 | Months 6–12 | SEO content + self-serve | Compounding inbound, $5k MRR |
+| Seed | Weeks 1–4 | Manual outreach in founder communities | 20 beta users |
+| Validate | Month 1–3 | SEO content ("karensavdrag guide", "moms OSS") | 200 sign-ups, 30 paying |
+| Grow | Month 3–6 | Bokio/Fortnox partnership | Co-marketing to 100k+ users |
+| Scale | Month 6–12 | Self-serve + referrals | 200k SEK MRR target |
 
 ---
 
 ## Pricing
 
-| Tier | Price | Limits | Target user |
-|------|-------|--------|-------------|
-| Free | $0/mo | [X] runs/mo | Try before buying |
-| Pro | $[X]/mo | Unlimited + [feature] | Solo professionals |
-| Team | $[Y]/mo | [N] seats + [feature] | Small teams |
-
-**Rationale:** [Why this pricing — e.g. "Priced below the hourly cost of the work it replaces"]
-
----
-
-## Key partnerships
-
-| Partner | Why them | What we offer | What we get |
-|---------|----------|---------------|-------------|
-| [Platform 1 — e.g. QuickBooks] | Serve our exact ICP | Agent integration, co-marketing | Distribution to their user base |
-| [Platform 2 — e.g. Slack] | Already in their workflow | Bot/integration | Ambient presence in daily work |
-| **Vorker.ai** | AI coworker platform | [PRODUCT NAME] as a native module | Infrastructure, go-to-market, credibility |
+| Tier | Price | Limits |
+|------|-------|--------|
+| Fri | 0 kr/mo | 10 queries/mo |
+| Solo | 149 kr/mo | Unlimited + history |
+| Företag | 499 kr/mo | 5 seats + Slack |
+| Enterprise | Custom | White-label for revisorsbyråer |
 
 ---
 
-## 90-day success metrics
+## Competitive moat
 
-| Metric | Target |
-|--------|--------|
-| Beta users | 50 |
-| Paying users | 10 |
-| MRR | $[X] |
-| NPS | > 40 |
-| Avg. time saved per user/wk | [X] hours |
+- **ChatGPT / generic AI:** Plausible but ungrounded, no Swedish-specific sourcing
+- **Bokio / Fortnox:** Bookkeeping, not compliance Q&A
+- **Human revisors:** 2,000–5,000 kr/hour, not on-demand
 
----
-
-## Risks and mitigations
-
-| Risk | Mitigation |
-|------|------------|
-| Low conversion from free to paid | Limit free tier meaningfully; show clear ROI in onboarding |
-| ICP is too broad | Niche down to one vertical for Phase 1; expand later |
-| AI errors erode trust | Human-in-the-loop confirmation for high-stakes actions |
+**Vorker Compliance:** Always-on, always-sourced, always-Swedish. Every answer links to the same authorities a revisor would cite.

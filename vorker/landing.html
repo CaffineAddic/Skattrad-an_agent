@@ -1,269 +1,115 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>[PRODUCT NAME] — [Tagline]</title>
+  <title>Vorker Compliance — AI-rådgivning för svenska företagare</title>
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: #fafaf9;
-      color: #1a1a18;
-      line-height: 1.6;
+    :root {
+      --blue: #006AB0;
+      --dark: #0F1923;
+      --mid: #3A4A58;
+      --light: #F4F7FA;
+      --border: #DDE3EA;
+      --green: #1A7F5A;
     }
-
-    /* Nav */
-    nav {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 1.25rem 2rem;
-      border-bottom: 1px solid #e8e6e0;
-      background: #fff;
-    }
-    .logo { font-size: 1.1rem; font-weight: 600; color: #1a1a18; text-decoration: none; }
-    .nav-cta {
-      background: #1a1a18;
-      color: #fff;
-      padding: 0.5rem 1.25rem;
-      border-radius: 8px;
-      text-decoration: none;
-      font-size: 0.875rem;
-      font-weight: 500;
-    }
-
-    /* Hero */
-    .hero {
-      max-width: 720px;
-      margin: 0 auto;
-      padding: 5rem 2rem 4rem;
-      text-align: center;
-    }
-    .badge {
-      display: inline-block;
-      background: #eeedfe;
-      color: #3c3489;
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 0.35rem 0.9rem;
-      border-radius: 20px;
-      margin-bottom: 1.5rem;
-      letter-spacing: 0.03em;
-    }
-    h1 {
-      font-size: clamp(2rem, 5vw, 3rem);
-      font-weight: 600;
-      line-height: 1.15;
-      margin-bottom: 1.25rem;
-      color: #1a1a18;
-    }
-    .hero p {
-      font-size: 1.1rem;
-      color: #5a5a56;
-      max-width: 540px;
-      margin: 0 auto 2.5rem;
-    }
-    .hero-cta {
-      display: inline-block;
-      background: #1a1a18;
-      color: #fff;
-      padding: 0.85rem 2rem;
-      border-radius: 10px;
-      text-decoration: none;
-      font-size: 1rem;
-      font-weight: 500;
-      margin-right: 0.75rem;
-    }
-    .hero-cta.secondary {
-      background: transparent;
-      color: #1a1a18;
-      border: 1px solid #d0cec8;
-    }
-
-    /* How it works */
-    .section { padding: 4rem 2rem; max-width: 960px; margin: 0 auto; }
-    .section-label {
-      font-size: 0.75rem;
-      font-weight: 600;
-      letter-spacing: 0.08em;
-      color: #9a9890;
-      text-transform: uppercase;
-      margin-bottom: 0.75rem;
-    }
-    .section h2 { font-size: 1.75rem; font-weight: 600; margin-bottom: 0.75rem; }
-    .section .sub { font-size: 1rem; color: #5a5a56; max-width: 560px; margin-bottom: 3rem; }
-
-    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem; }
-    .step {
-      background: #fff;
-      border: 1px solid #e8e6e0;
-      border-radius: 12px;
-      padding: 1.5rem;
-    }
-    .step-num {
-      width: 32px; height: 32px;
-      background: #eeedfe;
-      color: #3c3489;
-      border-radius: 8px;
-      display: flex; align-items: center; justify-content: center;
-      font-size: 0.875rem; font-weight: 600;
-      margin-bottom: 1rem;
-    }
-    .step h3 { font-size: 1rem; font-weight: 600; margin-bottom: 0.4rem; }
-    .step p { font-size: 0.9rem; color: #5a5a56; }
-
-    /* For who */
-    .for-who { background: #fff; border-top: 1px solid #e8e6e0; border-bottom: 1px solid #e8e6e0; }
-    .for-who .section { display: flex; gap: 4rem; align-items: center; flex-wrap: wrap; }
-    .for-who-text { flex: 1; min-width: 260px; }
-    .for-who-list { flex: 1; min-width: 260px; }
-    .for-who-list ul { list-style: none; }
-    .for-who-list li {
-      padding: 0.75rem 0;
-      border-bottom: 1px solid #e8e6e0;
-      font-size: 0.95rem;
-      color: #1a1a18;
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-    .for-who-list li::before { content: "✓"; color: #1d9e75; font-weight: 700; }
-    .for-who-list li:last-child { border-bottom: none; }
-
-    /* Pricing */
-    .pricing-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; margin-top: 2.5rem; }
-    .price-card {
-      background: #fff;
-      border: 1px solid #e8e6e0;
-      border-radius: 12px;
-      padding: 1.75rem;
-    }
-    .price-card.featured { border-color: #7f77dd; border-width: 2px; }
-    .price-card .tier { font-size: 0.8rem; font-weight: 600; color: #9a9890; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 0.5rem; }
-    .price-card .amount { font-size: 2rem; font-weight: 600; margin-bottom: 0.25rem; }
-    .price-card .amount span { font-size: 0.9rem; color: #9a9890; font-weight: 400; }
-    .price-card .desc { font-size: 0.875rem; color: #5a5a56; margin-bottom: 1.25rem; }
-    .price-card ul { list-style: none; font-size: 0.875rem; }
-    .price-card li { padding: 0.3rem 0; color: #5a5a56; }
-    .price-card li::before { content: "– "; }
-
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 2.5rem 2rem;
-      font-size: 0.85rem;
-      color: #9a9890;
-      border-top: 1px solid #e8e6e0;
-    }
-    footer a { color: #5a5a56; text-decoration: none; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; color: var(--dark); line-height: 1.6; }
+    nav { display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; border-bottom: 1px solid var(--border); }
+    .logo { font-weight: 700; font-size: 1.1rem; text-decoration: none; color: var(--dark); }
+    .nav-cta { background: var(--blue); color: #fff; padding: .5rem 1.2rem; border-radius: 8px; text-decoration: none; font-size: .875rem; }
+    .hero { max-width: 720px; margin: 0 auto; padding: 4rem 2rem; text-align: center; }
+    .badge { display: inline-block; background: #EBF4FF; color: var(--blue); font-size: .75rem; font-weight: 600; padding: .35rem 1rem; border-radius: 20px; margin-bottom: 1.25rem; }
+    h1 { font-size: clamp(1.8rem, 5vw, 2.6rem); font-weight: 700; line-height: 1.2; margin-bottom: 1rem; }
+    h1 span { color: var(--blue); }
+    .sub { color: var(--mid); font-size: 1.05rem; margin-bottom: 2rem; }
+    .actions { display: flex; gap: .75rem; justify-content: center; flex-wrap: wrap; }
+    .btn { padding: .85rem 1.75rem; border-radius: 10px; text-decoration: none; font-size: 1rem; font-weight: 500; }
+    .btn-primary { background: var(--blue); color: #fff; }
+    .btn-secondary { border: 1px solid var(--border); color: var(--dark); }
+    .trust { background: var(--light); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 1rem 2rem; text-align: center; font-size: .8rem; color: var(--mid); }
+    section { max-width: 860px; margin: 0 auto; padding: 3.5rem 2rem; }
+    h2 { font-size: 1.6rem; margin-bottom: .5rem; }
+    .section-sub { color: var(--mid); margin-bottom: 2rem; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.25rem; }
+    .card { border: 1px solid var(--border); border-radius: 12px; padding: 1.5rem; background: #fff; }
+    .card h3 { font-size: 1rem; margin-bottom: .4rem; }
+    .card p { font-size: .875rem; color: var(--mid); }
+    .chat { background: var(--light); border: 1px solid var(--border); border-radius: 12px; overflow: hidden; margin-top: 1.5rem; }
+    .chat-head { background: var(--blue); color: #fff; padding: .75rem 1.25rem; font-size: .875rem; font-weight: 500; }
+    .chat-body { padding: 1.25rem; display: flex; flex-direction: column; gap: .75rem; }
+    .msg-user { align-self: flex-end; background: var(--blue); color: #fff; padding: .7rem 1rem; border-radius: 12px 12px 3px 12px; font-size: .875rem; max-width: 85%; }
+    .msg-agent { align-self: flex-start; background: #fff; border: 1px solid var(--border); padding: 1rem; border-radius: 3px 12px 12px 12px; font-size: .875rem; max-width: 90%; }
+    .source { display: block; margin-top: .5rem; font-size: .75rem; color: var(--blue); }
+    footer { text-align: center; padding: 2rem; font-size: .8rem; color: var(--mid); border-top: 1px solid var(--border); }
   </style>
 </head>
 <body>
-
   <nav>
-    <a class="logo" href="#">[PRODUCT NAME]</a>
-    <a class="nav-cta" href="mailto:[YOUR EMAIL]">Join the beta</a>
+    <a class="logo" href="#">Vorker Compliance</a>
+    <a class="nav-cta" href="#demo">Se demo</a>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero">
-    <div class="badge">AI coworker for [TARGET USER TYPE]</div>
-    <h1>[HEADLINE — e.g. "Stop chasing invoices. Let your AI coworker do it."]</h1>
-    <p>[SUB-HEADLINE — e.g. "An AI agent that handles your overdue invoices end-to-end — drafts the emails, sends the reminders, and logs every response. Automatically."]</p>
-    <a class="hero-cta" href="mailto:[YOUR EMAIL]?subject=Beta access request">Join the beta</a>
-    <a class="hero-cta secondary" href="#how-it-works">See how it works</a>
-  </section>
-
-  <!-- HOW IT WORKS -->
-  <section class="section" id="how-it-works">
-    <div class="section-label">How it works</div>
-    <h2>From [TRIGGER] to [OUTCOME] — automatically</h2>
-    <p class="sub">[One sentence expanding on what the agent does end-to-end.]</p>
-
-    <div class="steps">
-      <div class="step">
-        <div class="step-num">1</div>
-        <h3>[Step 1 title — e.g. "Connect your tools"]</h3>
-        <p>[Step 1 description — e.g. "Link your Gmail and accounting software in one click."]</p>
-      </div>
-      <div class="step">
-        <div class="step-num">2</div>
-        <h3>[Step 2 title — e.g. "Agent detects the trigger"]</h3>
-        <p>[Step 2 description — e.g. "The agent monitors for overdue invoices and kicks in automatically."]</p>
-      </div>
-      <div class="step">
-        <div class="step-num">3</div>
-        <h3>[Step 3 title — e.g. "It handles everything"]</h3>
-        <p>[Step 3 description — e.g. "Drafts a personalised follow-up, sends it, logs the response, and escalates if needed."]</p>
-      </div>
+  <div class="hero">
+    <div class="badge">Byggd med Google ADK · Vorker Intern Tryouts 2026</div>
+    <h1>Din AI-medarbetare för <span>svensk compliance</span></h1>
+    <p class="sub">Svar grundade i Skatteverket, Bolagsverket och verksamt.se — inte generiska AI-gissningar.</p>
+    <div class="actions">
+      <a class="btn btn-primary" href="#demo">Prova demo</a>
+      <a class="btn btn-secondary" href="https://github.com/CaffineAddic/Vorker">GitHub</a>
     </div>
-  </section>
-
-  <!-- FOR WHO -->
-  <div class="for-who">
-    <section class="section">
-      <div class="for-who-text">
-        <div class="section-label">Built for</div>
-        <h2>[TARGET USER TYPE — e.g. "Freelancers and small agencies"]</h2>
-        <p style="color:#5a5a56; margin-top:0.75rem;">[Why this product is perfect for them — 2 sentences.]</p>
-      </div>
-      <div class="for-who-list">
-        <ul>
-          <li>[Benefit 1 — e.g. "Works inside tools you already use"]</li>
-          <li>[Benefit 2 — e.g. "No setup beyond a 2-minute connect"]</li>
-          <li>[Benefit 3 — e.g. "Saves 3–5 hours every week"]</li>
-          <li>[Benefit 4 — e.g. "Never miss a follow-up again"]</li>
-        </ul>
-      </div>
-    </section>
   </div>
 
-  <!-- PRICING -->
-  <section class="section">
-    <div class="section-label">Pricing</div>
-    <h2>Simple, transparent pricing</h2>
-    <p class="sub">Start free. Upgrade when it's saving you real time.</p>
+  <div class="trust">
+    Källor: skatteverket.se · bolagsverket.se · verksamt.se · Alltid med källhänvisning
+  </div>
 
-    <div class="pricing-grid">
-      <div class="price-card">
-        <div class="tier">Free</div>
-        <div class="amount">$0 <span>/mo</span></div>
-        <div class="desc">Try it out, no credit card needed.</div>
-        <ul>
-          <li>[X] runs per month</li>
-          <li>[Basic feature]</li>
-          <li>Community support</li>
-        </ul>
+  <section>
+    <h2>Så fungerar det</h2>
+    <p class="section-sub">Tre steg — sök, hämta, citera.</p>
+    <div class="grid">
+      <div class="card">
+        <h3>1. Sök auktoritativa källor</h3>
+        <p>Agenten söker svenska myndigheters webbplatser för aktuell information.</p>
       </div>
-      <div class="price-card featured">
-        <div class="tier">Pro ✦ Most popular</div>
-        <div class="amount">$[X] <span>/mo</span></div>
-        <div class="desc">For solo professionals who want full automation.</div>
-        <ul>
-          <li>Unlimited runs</li>
-          <li>[Key pro feature]</li>
-          <li>[Second pro feature]</li>
-          <li>Email support</li>
-        </ul>
+      <div class="card">
+        <h3>2. Hämta fulltext</h3>
+        <p>Läser hela sidan — inte bara sökresultat — för exakta regler och tröskelvärden.</p>
       </div>
-      <div class="price-card">
-        <div class="tier">Team</div>
-        <div class="amount">$[Y] <span>/mo</span></div>
-        <div class="desc">For small teams sharing one AI coworker.</div>
-        <ul>
-          <li>Up to [N] seats</li>
-          <li>[Team feature]</li>
-          <li>Priority support</li>
-        </ul>
+      <div class="card">
+        <h3>3. Svara med källor</h3>
+        <p>Varje svar inkluderar URL:er och en tydlig ansvarsfriskrivning.</p>
       </div>
     </div>
   </section>
 
-  <footer>
-    Built at <a href="https://vorker.ai">Vorker Intern Tryouts</a> · Phase 1 · June 11, 2026
-  </footer>
+  <section id="demo">
+    <h2>Exempel: moms vid SaaS-försäljning</h2>
+    <p class="section-sub">B2B Norge vs B2C Tyskland — jämförelse med källor.</p>
+    <div class="chat">
+      <div class="chat-head">Vorker Compliance</div>
+      <div class="chat-body">
+        <div class="msg-user">Vad gäller för moms när mitt svenska bolag säljer SaaS till B2B i Norge vs B2C i Tyskland?</div>
+        <div class="msg-agent">
+          <strong>Kort svar:</strong> B2B Norge: omvänd skattskyldighet, ingen svensk moms. B2C Tyskland: tysk moms (19%) via OSS.<br><br>
+          <strong>Källor:</strong>
+          <span class="source">skatteverket.se — försäljning av tjänster till utlandet</span>
+          <span class="source">verksamt.se — sälja till utlandet</span>
+        </div>
+      </div>
+    </div>
+  </section>
 
+  <section>
+    <h2>Priser</h2>
+    <p class="section-sub">En undviken momsbot betalar för ett års abonnemang.</p>
+    <div class="grid">
+      <div class="card"><h3>Fri</h3><p>0 kr/mo · 10 frågor</p></div>
+      <div class="card"><h3>Solo</h3><p>149 kr/mo · Obegränsat</p></div>
+      <div class="card"><h3>Företag</h3><p>499 kr/mo · 5 platser</p></div>
+    </div>
+  </section>
+
+  <footer>Vorker Compliance · Vorker Intern Tryouts Phase 1 · June 11, 2026</footer>
 </body>
 </html>
