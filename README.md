@@ -124,11 +124,6 @@ Vorker/
 
 **One-liner:** *Skattråd is the AI compliance coworker that gives Swedish SME owners the confidence of a revisor — at a fraction of the cost.*
 
----
-
-## Timeline
-
-Built solo in 2 hours (14:30–16:30 Stockholm time) at Vorker Intern Tryouts, Phase 1.
 
 ---
 
