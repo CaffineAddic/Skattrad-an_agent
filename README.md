@@ -125,5 +125,3 @@ Vorker/
 
 
 ---
-
-_June 11, 2026 · [Vorker.ai](https://vorker.ai)_
