@@ -3,8 +3,7 @@
 > **The AI compliance coworker for Swedish small business owners.**
 > Grounded answers on tax, VAT, corporate law, and labor regulations — always sourced from Skatteverket, Bolagsverket, and verksamt.se.
 
-Built with [Google ADK](https://google.github.io/adk-docs/) + [NVIDIA NIM](https://build.nvidia.com/) for **Vorker Intern Tryouts — Phase 1** (June 11, 2026).
-
+Built with [Google ADK](https://google.github.io/adk-docs/) + [NVIDIA NIM](https://build.nvidia.com/).
 **Status:** ✅ All 3 test cases working. Agent grounds answers in live Swedish authority sources.
 
 ---
